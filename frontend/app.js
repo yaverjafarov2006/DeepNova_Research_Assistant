@@ -77,9 +77,7 @@ const USE_MOCK = false;
     endpoint buradan dəyişdiriləcək.
 */
 
-const API_URL =
-    "http://127.0.0.1:8000/api/ask";
-
+const API_URL = "https://deepnova-research-assistant.onrender.com/api/ask";
 
 questionInput.addEventListener(
     "input",
