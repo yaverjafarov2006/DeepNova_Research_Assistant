@@ -1,4 +1,4 @@
-# Async Research Assistant — Topic 4
+# Async Research Assistant - DeepNova
 
 Wikipedia, arXiv və veb axtarışını **paralel** sorğulayan, nəticələri LLM ilə
 sintez edib **istinadlı** cavab qaytaran CLI tətbiqi.
