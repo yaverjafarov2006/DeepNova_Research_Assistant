@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>DENO Research Assistant</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+    <div class="app-shell">
+
+        <!-- ========================= -->
+        <!-- SIDEBAR -->
+        <!-- ========================= -->
+
+        <aside class="sidebar">
+
+            <div class="brand-block">
+
+                <div class="brand-icon-box">
+                    <img
+                        src="assets/deno-icon.png"
+                        alt="DENO"
+                        class="brand-icon-img"
+                    >
+                </div>
+
+                <div class="brand-text">
+                    <h2>DENO</h2>
+                    <p>RESEARCH BEYOND BORDERS</p>
+                </div>
+
+            </div>
+
+
+            <button
+                class="new-chat-btn"
+                id="newChatBtn"
+            >
+                <span>＋</span>
+                New Research
+            </button>
+
+
+            <!-- RESEARCH SOURCES -->
+
+            <div class="menu-section">
+
+                <p class="menu-title">
+                    RESEARCH SOURCES
+                </p>
+
+
+                <button
+                    class="source-card active"
+                    data-source="wikipedia"
+                >
+
+                    <div class="source-left">
+                        <span class="source-dot wiki"></span>
+                        <span>Wikipedia</span>
+                    </div>
+
+                    <span class="source-check">
+                        ✓
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="source-card active"
+                    data-source="arxiv"
+                >
+
+                    <div class="source-left">
+                        <span class="source-dot arxiv"></span>
+                        <span>arXiv</span>
+                    </div>
+
+                    <span class="source-check">
+                        ✓
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="source-card active"
+                    data-source="web"
+                >
+
+                    <div class="source-left">
+                        <span class="source-dot web"></span>
+                        <span>Web Search</span>
+                    </div>
+
+                    <span class="source-check">
+                        ✓
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <!-- SETTINGS -->
+
+            <div class="menu-section settings-section">
+
+                <p class="menu-title">
+                    SETTINGS
+                </p>
+
+
+                <button
+                    class="setting-card"
+                    id="cacheToggle"
+                >
+
+                    <div class="source-left">
+                        <span>🗎</span>
+                        <span>Cache</span>
+                    </div>
+
+                    <span
+                        class="setting-value"
+                        id="cacheState"
+                    >
+                        on
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="setting-card"
+                    id="modeToggle"
+                >
+
+                    <div class="source-left">
+                        <span>⚙</span>
+                        <span>Mode</span>
+                    </div>
+
+                    <span
+                        class="setting-value"
+                        id="modeState"
+                    >
+                        auto
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="setting-card danger"
+                    id="clearCacheBtn"
+                >
+
+                    <div class="source-left">
+                        <span>⌫</span>
+                        <span>Clear cache</span>
+                    </div>
+
+                </button>
+
+            </div>
+
+
+            <!-- ENGINE STATUS -->
+
+            <div class="sidebar-footer">
+
+                <div class="engine-status">
+
+                    <span class="status-dot"></span>
+
+                    <div>
+                        <strong>
+                            Research Engine
+                        </strong>
+
+                        <p>
+                            System ready
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ========================= -->
+        <!-- MAIN -->
+        <!-- ========================= -->
+
+        <main class="main-panel">
+
+
+            <!-- TOP BAR -->
+
+            <header class="topbar">
+
+                <div class="topbar-left">
+
+                    <h3>
+                        Research Assistant
+                    </h3>
+
+                    <p>
+                        AI-powered multi-source research
+                    </p>
+
+                </div>
+
+
+                <div class="topbar-right">
+
+                    <button class="mode-btn">
+                        ✦ Research Mode
+                    </button>
+
+                </div>
+
+            </header>
+
+
+            <!-- ========================= -->
+            <!-- CHAT AREA -->
+            <!-- ========================= -->
+
+            <section
+                class="chat-container"
+                id="chatContainer"
+            >
+
+
+                <!-- WELCOME -->
+
+                <div
+                    class="welcome-screen"
+                    id="welcomeScreen"
+                >
+
+                    <div class="hero-overlay"></div>
+
+
+                    <div class="hero-content">
+
+
+                        <!-- HERO LOGO -->
+
+                        <div class="hero-logo-wrap">
+
+                            <div class="hero-logo-box">
+
+                                <img
+                                    src="assets/deno-icon.png"
+                                    alt="DENO"
+                                    class="hero-logo-img"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- DENO -->
+
+                        <h1 class="hero-title">
+                            DENO
+                        </h1>
+
+
+                        <p class="hero-subtitle">
+                            RESEARCH BEYOND BORDERS
+                        </p>
+
+
+                        <p class="hero-description">
+                            Ask a question and the assistant will analyze
+                            multiple sources and generate a structured
+                            research answer.
+                        </p>
+
+
+                        <!-- SLOGAN -->
+
+                        <div class="hero-slogan">
+
+                            <p>
+                                Ideas from here.
+                            </p>
+
+                            <p>
+                                Impact everywhere.
+                            </p>
+
+                        </div>
+
+
+                        <!-- SUGGESTIONS -->
+
+                        <div class="suggestions-row">
+
+
+                            <button
+                                class="suggestion-card suggestion"
+                                data-question="What are the main stages of photosynthesis?"
+                            >
+
+                                <div class="suggestion-icon">
+                                    🌱
+                                </div>
+
+                                <div class="suggestion-text">
+
+                                    <strong>
+                                        Photosynthesis
+                                    </strong>
+
+                                    <small>
+                                        Explain the main stages
+                                    </small>
+
+                                </div>
+
+                            </button>
+
+
+                            <button
+                                class="suggestion-card suggestion"
+                                data-question="Explain how artificial intelligence is changing healthcare."
+                            >
+
+                                <div class="suggestion-icon">
+                                    🧠
+                                </div>
+
+                                <div class="suggestion-text">
+
+                                    <strong>
+                                        Artificial Intelligence
+                                    </strong>
+
+                                    <small>
+                                        AI impact on healthcare
+                                    </small>
+
+                                </div>
+
+                            </button>
+
+
+                            <button
+                                class="suggestion-card suggestion"
+                                data-question="What are the latest applications of quantum computing?"
+                            >
+
+                                <div class="suggestion-icon">
+                                    ⚛
+                                </div>
+
+                                <div class="suggestion-text">
+
+                                    <strong>
+                                        Quantum Computing
+                                    </strong>
+
+                                    <small>
+                                        Research applications
+                                    </small>
+
+                                </div>
+
+                            </button>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CHAT MESSAGES -->
+
+                <div
+                    class="messages"
+                    id="messages"
+                ></div>
+
+
+            </section>
+
+
+            <!-- ========================= -->
+            <!-- INPUT -->
+            <!-- ========================= -->
+
+            <div class="input-area">
+
+                <div class="input-wrap">
+
+                    <textarea
+                        id="questionInput"
+                        placeholder="Ask a research question..."
+                        rows="1"
+                    ></textarea>
+
+                    <button
+                        id="voiceLangBtn"
+                        class="voice-lang-btn"
+                        title="Voice language"
+                    >
+                        EN
+                    </button>
+                    
+                    <button
+                        id="micBtn"
+                        class="mic-btn"
+                        title="Voice input"
+                        aria-label="Voice input"
+                    >
+                        🎤
+                    </button>
+
+                    <button
+                        id="sendBtn"
+                        class="send-btn"
+                    >
+                        ➜
+                    </button>
+
+                </div>
+
+                <p class="voice-status" id="voiceStatus">
+                    Say “Hey DENO” or tap the microphone
+                </p>
+
+                <p class="input-note">
+                    DENO may use web, academic and AI-generated information.
+                </p>
+
+            </div>
+
+
+        </main>
+
+    </div>
+
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
